@@ -49,6 +49,11 @@
 
           <label for="card-description" class="form-label" style="width:100%;">Description <span class="badge bg-primary" style="float: right; cursor: pointer;" v-on:click="$refs.helpModal.open()">?</span></label>
           <textarea class="form-control" style="height: 100px" rows="3" v-model="card.description"></textarea>
+
+          <hr>
+      
+           <label for="card.descriptionFontSize" class="form-label" style="width:100%;">Font Size</label> 
+           <input type="text" class="form-control" id="card-descriptionFontSize" v-model="card.descriptionFontSize"> 
           
         </div>
 

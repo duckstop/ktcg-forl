@@ -11,7 +11,7 @@
         <img v-show="card.faction != ''" class="bg-img" :src="'/faction-icons/' + card.faction + '.svg'">
         <img v-show="card.faction == ''" class="bg-img" src="/faction-icons/kill-team.svg">
          
-        <div class="card-body"> 
+        <div class="card-body" v-bind:style="{ 'font-size': card.descriptionFontSize }"> 
             <div v-show="card.type != 'operative'">
               <p v-html="parseText(card.description)"></p>
             </div>
@@ -156,7 +156,7 @@
                   .replace(new RegExp("{p}", 'g'), '<span style="color:red;">⬟</span>')
                   .replace(new RegExp("&&", 'g'), '<br><br>')
                   .replace(/\*\*(.*?)\*\*/gm, '<strong>$1</strong>')
-                  .replace(/\[(.*?)\]/gi, '<h3 style="margin-top: 10px; background: rgb(255, 79, 2) none repeat scroll 0% 0%; padding: 7px; height: 1%; color: rgb(48, 48, 48); display: flex; place-content: center; flex-direction: column; border: 1px solid rgb(48, 48, 48); text-transform: uppercase; font-size: large;">$1</h3>');;
+                  .replace(/\[(.*?)\]/gi, '<h3 style="margin-top: 10px; background: rgb(255, 79, 2) none repeat scroll 0% 0%; padding: 7px; height: 1%; color: rgb(48, 48, 48); display: flex; place-content: center; flex-direction: column; border: 1px solid rgb(48, 48, 48); text-transform: uppercase; font-size: larger; font-weight:bold">$1</h3>');;
 
 
 
@@ -198,6 +198,7 @@
 .card-body {
   position: relative;
   padding:10px;
+  font-size: 1rem;
 }
 
 .title {
